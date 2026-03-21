@@ -186,3 +186,155 @@ body {
 .logo-index{
   width: 10px;
 }
+
+.hide-on-mobile {
+    display: flex !important; /* Kasi excel-btn uses flex */
+}
+
+.mobile-logo,
+.mobile-text {
+    display: none; /* Tago muna by default */
+}
+
+.desktop-text {
+    color: #999;
+    display: block;
+}
+
+/* --- LOGIN MOBILE VIEW (768px and below) --- */
+@media (max-width: 768px) {
+
+  .login-container {
+    background: var(--primary-color);
+  }
+
+  .login-wrapper{
+    background: rgba(0, 0, 0, 0.292) !important; /* 50% Opacity White */
+  }
+  .hide-on-mobile {
+        display: none !important;
+    }
+
+    .login-container {
+        padding: 15px; /* Dagdag space sa paligid */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    .login-wrapper {
+        flex-direction: column;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+
+        /* OPTION 1: CLEAN GLASS TIMPLA */
+        background: rgba(255, 255, 255, 0.15) !important; 
+        backdrop-filter: blur(15px) saturate(150%);
+        -webkit-backdrop-filter: blur(15px) saturate(150%);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Brand Side Adjustment */
+    .brand-side {
+        padding: 30px 20px;
+        text-align: center;
+        width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .brand-side img {
+        width: 60px !important; /* Bahagyang paliitin ang logo */
+    }
+
+    .brand-side p {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    /* Form Side Adjustment */
+    .form-side {
+        padding: 30px 25px;
+        width: 100% !important;
+        background: transparent !important;
+    }
+
+    .form-header h2 {
+        font-size: 1.5rem;
+        text-align: center;
+        color: #ffffff;
+        
+    }
+
+    .form-header p {
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    /* Input Boxes - Gawing touch-friendly */
+    /* Ilagay mo 'to sa loob ng @media (max-width: 768px) block mo */
+
+    .input-box {
+        margin-bottom: 20px; /* Mas compact konti sa mobile */
+    }
+
+    .input-box span {
+        color: rgba(255, 255, 255, 0.7) !important; /* Puti na medyo transparent ang icon */
+    }
+
+    .input-box input {
+        background: rgba(255, 255, 255, 0.1) !important; /* Transparent white background */
+        border: 1px solid rgba(255, 255, 255, 0.2) !important; /* Manipis na border para sa glass look */
+        color: #ffffff !important; /* Puti ang text para mabasa */
+        border-radius: 12px;
+        padding: 15px 15px 15px 50px;
+    }
+
+    .input-box input::placeholder {
+        color: rgba(255, 255, 255, 0.5); /* Malabo na placeholder para malinis */
+    }
+
+    .input-box input:focus {
+        background: rgba(255, 255, 255, 0.2) !important; /* Lilitaw lalo pag cliniclick */
+        border-color: rgba(255, 255, 255, 0.5) !important; 
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Konting glow */
+    }
+
+    .login-btn {
+        width: 100%;
+        height: 50px;
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    /* Error Message Box */
+    .error-msg {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .desktop-text {
+        display: none !important;
+    }
+
+    /* Ipapakita ang Welcome to JIG IMS */
+    .mobile-text {
+        display: block !important;
+        color: rgba(255, 255, 255, 0.7); /* Puti/Transparent para sa glass theme mo */
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    .mobile-logo {
+      display: block !important;
+      margin-left: auto;
+      margin-right: auto;
+    }
+}

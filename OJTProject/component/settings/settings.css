@@ -85,3 +85,8 @@
   display: flex;
   justify-content: end;
 }
+@media (max-width: 768px) {
+    .ubuntu-fab-container {
+        display: none !important;
+    }
+}
