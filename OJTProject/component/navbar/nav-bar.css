@@ -1,3 +1,4 @@
+/* --- DESKTOP STYLES (No Changes Here) --- */
 a {
   text-decoration: none;
   color: whitesmoke;
@@ -24,15 +25,110 @@ header {
   background: var(--primary-color);
   box-shadow: 5px 5px 15px 5px #afafaf;
 }
+
 .menu-links ul {
   display: flex;
   flex-direction: row;
   gap: 2rem;
 }
+
 .menu-links ul li {
   list-style: none;
 }
-.logo img{
+
+.mobile-only {
+  display: none !important; /* Tago sa Desktop */
+}
+
+.logo img {
   width: 65px;
-  border-radius:10px; 
+  border-radius: 10px;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 1000;
+}
+
+.hamburger .bar {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: whitesmoke;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* --- MOBILE NAVIGATION ONLY (768px and below) --- */
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block !important; /* Pakitain ang extra links at HR */
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hamburger Animation */
+  .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .hamburger.active .bar:nth-child(2) { opacity: 0; }
+  .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  .nav-bar {
+    padding: 1rem 1.5rem;
+    height: 60px; /* Mas manipis na header sa mobile */
+  }
+
+  .menu-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%; 
+    height: 100vh;
+    background: var(--primary-color);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    transition: 0.3s ease;
+    z-index: 999;
+    
+    /* Layout Fix para magkasya lahat */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;
+    padding-top: 70px; /* Space para sa hamburger/logo area */
+    overflow-y: auto;  /* Scrollable kung sakaling mahaba ang listahan */
+  }
+
+  .menu-links.active {
+    right: 0;
+  }
+
+  .menu-links ul {
+    flex-direction: column;
+    gap: 0.8rem; /* Mas siksik na spacing */
+    text-align: center;
+    padding: 0 15px 30px 15px;
+    width: 100%;
+  }
+
+  .menu-links ul li a {
+    font-size: 16px; /* Mas maliit na font para magkasya */
+    font-weight: 500;
+    display: block;
+    padding: 8px 0;
+  }
+
+  .logo img {
+    width: 45px; /* Mas maliit na logo sa mobile */
+  }
+  
+  hr.mobile-only {
+    width: 50%; /* Maikling linya lang para tipid sa space */
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 2px auto;
+  }
 }

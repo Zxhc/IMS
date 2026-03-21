@@ -54,15 +54,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   <div class = "login-container"> 
     <div class="login-wrapper">
-        <div class="brand-side">
+        <div class="brand-side hide-on-mobile">
             <img src="./src/hepc.jpg" alt="www" style="width: 70px; height: auto;">
             <p>Inventory Management System</p>
         </div>
 
         <div class="form-side">
             <div class="form-header">
+                <img src="./src/hepc.jpg" alt="www" style="width: 70px; height: auto;" class="mobile-logo">
                 <h2>Login</h2>
-                <p style="color: #999;">Welcome Back!</p>
+                <p class="desktop-text">Welcome Back!</p>
+                <p class="mobile-text">Welcome to JIG IMS</p>
                 
                 <?php if (!empty($error_msg)): ?>
                     <div style="background: #ffebee; color: #d32f2f; padding: 10px; border-radius: 8px; margin-top: 15px; font-size: 0.85rem; border-left: 4px solid #d32f2f;">

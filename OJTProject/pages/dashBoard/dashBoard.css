@@ -60,3 +60,37 @@
   width: 100%;
   height: 100%;
 }
+
+/* Para sa mobile devices (karaniwang 768px pababa) */
+@media (max-width: 768px) {
+  .main {
+    height: auto; /* Hayaan nating humaba ang page base sa content */
+    padding: 0.5rem;
+  }
+
+  .box {
+    display: flex;
+    flex-direction: column; /* I-stack ang mga boxes nang patayo */
+    height: auto;
+    grid-template-rows: auto; /* I-reset ang grid rows */
+    grid-template-areas: none; /* Tanggalin ang complex areas */
+  }
+
+  .box-1 {
+    grid-template-columns: 1fr; /* Gawing single column ang dalawang maliit na box */
+    height: auto;
+  }
+
+  .box-1 .box-content {
+    height: 200px; /* Bigyan ng sapat na height yung mga top boxes */
+  }
+
+  .box-3, .box-4 {
+    height: 400px; /* O 'auto' kung gusto mong humaba depende sa laman */
+    min-height: 300px;
+  }
+
+  .box-content:hover {
+    transform: none; /* Mas magandang tanggalin ang hover lift sa touchscreens */
+  }
+}

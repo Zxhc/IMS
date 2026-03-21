@@ -269,3 +269,91 @@
   color: #2d3748;
   font-size: 1.1rem;
 }
+
+.hide-on-mobile {
+    display: flex !important; /* Kasi excel-btn uses flex */
+}
+
+@media (max-width: 768px) {
+  .hide-on-mobile {
+        display: none !important;
+    }
+
+    #history-content {
+        max-height: none; 
+        padding: 10px;
+    }
+
+    .history-table {
+        border-spacing: 0; /* Alisin ang spacing para sa cards */
+    }
+
+    .history-table thead {
+        display: none; /* Tago ang header */
+    }
+
+    .history-table tbody tr {
+        display: block;
+        margin-bottom: 20px;
+        border: 1px solid #e2e8f0;
+        border-radius: 15px;
+        background: white;
+        overflow: hidden; /* Para hindi lumabas ang corners ng td */
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        opacity: 1 !important; /* Force visibility */
+        transform: none !important;
+    }
+
+    .history-table td {
+        display: flex; /* Ginawang flex para pantay ang Label at Value */
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 15px !important;
+        border: none !important;
+        border-bottom: 1px solid #f1f5f9 !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* Checkbox Styling - Gusto natin ito sa taas or center */
+    .checkbox-cell {
+        background: #f8fafc;
+        justify-content: center !important; /* I-center ang checkbox */
+    }
+
+    .history-table td::before {
+        content: attr(data-label); /* Hinihila nito yung text sa HTML */
+        font-weight: 800;
+        color: #64748b;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* Pantayin ang text sa kanan para malinis */
+    .history-table td {
+        text-align: right;
+    }
+
+    /* Exception: Ang item name at description ay mas maganda kung left-aligned */
+    .history-table td[data-label="Item Name"],
+    .history-table td[data-label="Description"] {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .history-table td[data-label="Item Name"]::before,
+    .history-table td[data-label="Description"]::before {
+        margin-bottom: 5px;
+    }
+
+    .urgent-badge {
+        display: inline-block;
+        margin-top: 5px;
+        margin-left: 0;
+    }
+    .mobile-header-view{
+      font-size: 15px;
+    }
+}
